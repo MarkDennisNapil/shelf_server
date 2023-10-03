@@ -8,7 +8,7 @@ const fileupload = require('express-fileupload');
 const app = express();
 const Route = require('./routes/route');
 
-mongoose.connect('mongodb+srv://dennismarko:markdennisiligannapil3182000@cluster0.foskgri.mongodb.net/?retryWrites=true&w=majority/shelf',
+mongoose.connect('mongodb+srv://dennismarko:markdennisiligannapil3182000@cluster0.foskgri.mongodb.net/shelf',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
