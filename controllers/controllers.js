@@ -87,8 +87,8 @@ exports.deleteNote = (req, res) => {
 exports.SearchNote = (req, res) => {
   let keyword = req.params.keyword;
   let rp = req.params;
-  noteSchema.find({$text: {$search: keyword}, creator: rp.uid})
-  .then(data => {
+  noteSchema.aggregate([{$search: { index: "default", text: { query: `${keyword}`, path: { wildcard: "*" }}}}]),
+  postMo.  .hen(data => {
     res.send(data);
     console.log(data);
   })
