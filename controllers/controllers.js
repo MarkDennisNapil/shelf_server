@@ -88,7 +88,7 @@ exports.SearchNote = (req, res) => {
   let keyword = req.params.keyword;
   let rp = req.params;
   noteSchema.aggregate([{$search: { index: "default", text: { query: `${keyword}`, path: { wildcard: "*" }}}}]),
-  postMo.  .hen(data => {
+  .then(data => {
     res.send(data);
     console.log(data);
   })
